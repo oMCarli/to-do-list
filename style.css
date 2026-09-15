@@ -1,0 +1,20 @@
+.taskList{
+    button{
+        margin-left: 5px;
+        flex-direction: row;
+    }
+}
+
+.deleteButton{
+    background-color: white;
+}
+
+.conteinerPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botaoDelete{
+    
+}
