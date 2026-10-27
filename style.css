@@ -1,7 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(./imagens/background.jpg)
+    no-repeat center center/cover;
+}
+
+
 .taskList{
     button{
         margin-left: 5px;
         flex-direction: row;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.18);
+        border: 3px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        list-style: none;
+
+    }
+
+    li span{
+        flex: 1;
+        min-width: 0;
+        font-size: 1rem;
+        color: #000;
+        padding-left: 5px;
+        word-break: break-word;
+    }
+
+    button{
+        flex-shrink: 0;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        border: none;
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+     
+    button:hover{
+        background-color: rgba(255, 255, 255, 0.4);
     }
 }
 
@@ -9,12 +67,75 @@
     background-color: white;
 }
 
-.conteinerPrincipal{
+.conteinerUm{
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border-radius: 5%;
 }
 
-.botaoDelete{
+.box1{
+    margin: 5px;
     
+    padding: 7%;
+    
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#taskInput{
+    flex: 1;
+    min-width: 0;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+}
+
+.botaoAdd,
+.botaoDelete{
+    flex-shrink: 0;
+    padding: 10px 10px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+}
+
+.botaoAdd:hover{
+    background-color: #43a047;
+}
+
+.botaoDelete:hover {
+  background-color: #c62828;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+#deleteButton{
+    background-color: red;
 }

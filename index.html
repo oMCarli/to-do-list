@@ -17,22 +17,30 @@
   </head>
 
   <body>
-    <div class="conteinerPrincipal">
-         <h1>lista de tarefas:</h1>
-    <div class="main">
+    <div class="conteinerUm">
+      
+      <div class="box1">
+         <h1 id="titulo">lista de tarefas: (<span id="contador">0</span>)</h1>
+      </div>
 
-    <input type="text" id="taskInput">
-    <button class="botaoAdd" onclick="addTask()">
-      <i class="fa-solid fa-plus"></i>
-    </button>
+      <div class="main">
 
-    <button class="botaoDelete" onclick="deleteTask()">
-      <i class="fa-solid fa-trash-can"></i>
-    </button>
-    </div>
+           <input type="text" id="taskInput" placeholder="Add a new task...">
 
-    <ul id="taskList" class="taskList"></ul>
-    
+              <button class="botaoAdd" onclick="addTask()">
+                  <i class="fa-solid fa-plus"></i>
+              </button>
+
+                <button class="botaoDelete" onclick="deleteTask()">
+                  <i class="fa-solid fa-trash-can"></i>
+               </button>
+
+     </div>
+
+      <div class="taskAdds">
+           <ul id="taskList" class="taskList"></ul>
+      </div>
   </div>
+
   </body>
 </html>

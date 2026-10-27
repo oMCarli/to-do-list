@@ -1,6 +1,7 @@
 let count = 0;
 
 function addTask() {
+    let title = document.getElementById("titulo");
     let input = document.getElementById("taskInput");
     let task = input.value;
     if (task == ''){
@@ -16,7 +17,7 @@ function addTask() {
     
     // botao de editar
     let editButton = document.createElement("button");
-    editButton.textContent = "Editar";
+    editButton.className = "fa-solid fa-pen-to-square";
     editButton.onclick = function() {
         let newTask = prompt("Edit sua tarefa:", text.textContent);
 
@@ -25,18 +26,18 @@ function addTask() {
         }
     }
 
-    
-
-    // botao de deletar
+    // botao de deletar item da lista
     let deleteButton = document.createElement("button");
 
     let deleteIcon = document.createElement("i");
-    deleteIcon.className = "fa-solid fa-delete-left";
+    deleteIcon.className = "fa-solid fa-trash-can";
     
     deleteButton.className = "deleteButton";
     deleteButton.textContent = "";
     deleteButton.onclick = function(){
         listItem.remove();
+        subUpdate(title);
+        return;
     }
 
     deleteButton.appendChild(deleteIcon);
@@ -53,13 +54,32 @@ function addTask() {
     list.appendChild(listItem);
 
     input.value = "";
+    sumUpdate(title);
+    return;
+
 }
 
+//botao de deletar tudo ()
 function deleteTask() {
     let list = document.getElementById("taskList");
-    if (list.children.length > 0) {
-        list.removeChild(list.lastChild);
-    }
+    let title = document.getElementById("titulo");
+    list.innerHTML = "";
+    zeroUpdate(title);
+}
+
+function sumUpdate(title){
+    count++;
+    title.textContent = "Lista de tarefas: ("+ count +")";
+}
+
+function subUpdate(title){
+    count--;
+    title.textContent = "Lista de tarefas: ("+ count +")";
+}
+
+function zeroUpdate(title){
+    count = 0;
+    title.textContent = "Lista de tarefas: ("+ count +")";
 }
 
 // CRUD
